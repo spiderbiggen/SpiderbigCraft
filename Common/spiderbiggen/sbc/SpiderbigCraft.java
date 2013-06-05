@@ -1,5 +1,6 @@
 package spiderbiggen.sbc;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,6 +29,9 @@ public class SpiderbigCraft {
      */
     public static Item eggSalad;
     public static Item potatoSalad;
+    public static Item salmonSalad;
+    public static Item boiledEgg;
+    public static Item cheese;
 
     /**
      * CreativeTabs
@@ -45,11 +49,27 @@ public class SpiderbigCraft {
 
     public void Load(FMLInitializationEvent event){
         // items with their recipes
-        eggSalad = new ItemSoupSBCraft(3400, 4, false).setUnlocalizedName("eggSalad");
+        boiledEgg = new ItemFoodSBCraft(3400, 1, 0.7F, false).setUnlocalizedName("boiledEgg");
+        LanguageRegistry.addName(boiledEgg, "Boiled Egg");
+        GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
+        
+        eggSalad = new ItemSoupSBCraft(3401, 3, false).setUnlocalizedName("eggSalad");
         LanguageRegistry.addName(eggSalad, "Egg Salad");
-        GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", "e", Item.egg, "p", Item.potato, "b", Item.bowlEmpty);
-        potatoSalad = new ItemSoupSBCraft(3400, 4, false).setUnlocalizedName("potatoSalad");
+        GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", "e", boiledEgg, "p", Item.bakedPotato, "b", Item.bowlEmpty);
+        
+        potatoSalad = new ItemSoupSBCraft(3402, 5, false).setUnlocalizedName("potatoSalad");
         LanguageRegistry.addName(potatoSalad, "Potato Salad");
+        GameRegistry.addRecipe(new ItemStack(potatoSalad), " p ", "pgp", " b ", "p", Item.bakedPotato, "b", Item.bowlEmpty, "g", Block.tallGrass);
+        
+        salmonSalad = new ItemSoupSBCraft(3403, 4, false).setUnlocalizedName("salmonSalad");
+        LanguageRegistry.addName(salmonSalad, "Salmon Salad");
+        GameRegistry.addShapelessRecipe(new ItemStack(salmonSalad, 1), new Object[] { new ItemStack(Item.fishRaw, 2), new ItemStack(Item.bowlEmpty, 1), new ItemStack(Item.bakedPotato, 1), new ItemStack(boiledEgg, 1) });
+        
+        cheese = new ItemFoodSBCraft(3404, 2, 1.1F, true).setUnlocalizedName("cheese");
+        LanguageRegistry.addName(cheese, "Cheese");
+        GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[]{ new ItemStack(Item.bucketMilk, 3) });
+        
+        LanguageRegistry.instance().addStringLocalization("itemGroup.tabSBCraft", "en_US", "SpiderbigCraft");
     }
 
     @Init
@@ -60,7 +80,7 @@ public class SpiderbigCraft {
 
     @PostInit
     public void preInit(FMLPostInitializationEvent event){
-
+        System.out.println("Done Loading " + Reference.MOD_NAME + " Version: " + Reference.VERSION);
     }
 
 }
