@@ -27,7 +27,7 @@ public class SpiderbigCraft {
     /**
      * Items
      */
-    public static Item eggSalad;
+    public static Item eggSalad = new ItemSoupSBCraft(3401, 3, false).setUnlocalizedName("eggSalad");
     public static Item potatoSalad;
     public static Item salmonSalad;
     public static Item boiledEgg;
@@ -37,9 +37,9 @@ public class SpiderbigCraft {
      * CreativeTabs
      */
     public static CreativeTabs tabSBCraft = new CreativeTabs("tabSBCraft"){
-        public ItemStack getIconItemStack(){
+        public ItemStack getIconItemStack() {
             return new ItemStack(eggSalad, 1, 0);
-        }
+       }
     };
 
     @PreInit
@@ -53,7 +53,6 @@ public class SpiderbigCraft {
         LanguageRegistry.addName(boiledEgg, "Boiled Egg");
         GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
         
-        eggSalad = new ItemSoupSBCraft(3401, 3, false).setUnlocalizedName("eggSalad");
         LanguageRegistry.addName(eggSalad, "Egg Salad");
         GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", "e", boiledEgg, "p", Item.bakedPotato, "b", Item.bowlEmpty);
         
@@ -67,9 +66,7 @@ public class SpiderbigCraft {
         
         cheese = new ItemFoodSBCraft(3404, 2, 1.1F, true).setUnlocalizedName("cheese");
         LanguageRegistry.addName(cheese, "Cheese");
-        GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[]{ new ItemStack(Item.bucketMilk, 3) });
-        
-        LanguageRegistry.instance().addStringLocalization("itemGroup.tabSBCraft", "en_US", "SpiderbigCraft");
+        GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[]{ new ItemStack(Item.bucketMilk, 3)});
     }
 
     @Init

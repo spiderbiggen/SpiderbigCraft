@@ -1,9 +1,5 @@
 package spiderbiggen.sbc;
 
-import spiderbiggen.sbc.lib.Reference;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,8 +17,4 @@ public class ItemSoupSBCraft extends ItemFoodSBCraft {
         return new ItemStack(Item.bowlEmpty);
     }
     
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister){
-        this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
-    }
 }

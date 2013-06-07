@@ -18,8 +18,8 @@ public class ItemFoodSBCraft extends ItemFood {
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister){
-        this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
+    public void updateIcons(IconRegister iconRegister){
+        itemIcon = iconRegister.registerIcon(Reference.MOD_NAME + ":" + this.getUnlocalizedName().substring(5));
     }
 
 }
