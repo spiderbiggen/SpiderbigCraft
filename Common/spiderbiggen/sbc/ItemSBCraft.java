@@ -14,9 +14,10 @@ public class ItemSBCraft extends Item {
     }
 
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconRegister){
-        itemIcon = iconRegister.registerIcon(Reference.MOD_NAME + ":" + this.getUnlocalizedName().substring(5));
+    public void registerIcons(IconRegister iconRegister){
+        itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
 }
