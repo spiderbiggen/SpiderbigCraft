@@ -1,16 +1,15 @@
 package spiderbiggen.sbc;
 
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
 import spiderbiggen.sbc.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.ItemSeedFood;
 
-public class ItemSBCraft extends Item {
+public class ItemSeedFoodSBCraft extends ItemSeedFood {
 
-    public ItemSBCraft(int par1){
-        super(par1);
-        this.setCreativeTab(SpiderbigCraft.tabSBCraft);
+    public ItemSeedFoodSBCraft(int par1, int par2, float par3, int par4, int par5){
+        super(par1, par2, par3, par4, par5);
     }
 
     @Override
@@ -18,5 +17,4 @@ public class ItemSBCraft extends Item {
     public void registerIcons(IconRegister iconRegister){
         itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
-
 }

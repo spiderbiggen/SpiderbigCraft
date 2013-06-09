@@ -16,5 +16,5 @@ public class ItemSoupSBCraft extends ItemFoodSBCraft {
         super.onEaten(par1ItemStack, par2World, par3EntityPlayer);
         return new ItemStack(Item.bowlEmpty);
     }
-    
+
 }
