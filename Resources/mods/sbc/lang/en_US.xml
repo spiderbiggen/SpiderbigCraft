@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+ <properties version="1.0">
+	<comment>English (en_US) Localization File</comment>
+	<entry key="item.pickaxeRedStonium.name">Redstonium Pickaxe</entry>
+	<entry key="item.eggSalad.name">Egg Salad</entry>
+	<entry key="item.potatoSalad.name">Potato Salad</entry>
+	<entry key="item.salmonSalad.name">Salmon Salad</entry>
+	<entry key="item.boiledEgg.name">Boiled Egg</entry>
+	<entry key="item.cheese.name">Cheese</entry>
+	<entry key="item.tomato.name">Tomato</entry>
+	<entry key="tile.tomatoCrop.name">Tomatoes</entry>
+</properties>

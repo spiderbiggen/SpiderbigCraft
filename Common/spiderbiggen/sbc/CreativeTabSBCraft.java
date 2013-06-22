@@ -1,7 +1,7 @@
 package spiderbiggen.sbc;
 
-import spiderbiggen.sbc.items.SBCItems;
 import net.minecraft.creativetab.CreativeTabs;
+import spiderbiggen.sbc.items.SBCItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
