@@ -21,6 +21,10 @@ public class SBCItems {
     public static EnumToolMaterial RedStoniumMaterial;
 
     public static Item pickaxeRedStonium;
+    public static Item shovelRedStonium;
+    public static Item swordRedStonium;
+    public static Item hoeRedStonium;
+    public static Item axeRedStonium;
 
     /**
      * @param args
@@ -48,6 +52,10 @@ public class SBCItems {
 
         // tools
         pickaxeRedStonium = new ItemPickaxeSBCraft(3410, RedStoniumMaterial).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("pickaxeRedStonium");
+        shovelRedStonium = new ItemShovelSBCraft(3411, RedStoniumMaterial).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("shovelRedStonium");
+        hoeRedStonium = new ItemHoeSBCraft(3412, RedStoniumMaterial).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("hoeRedStonium");
+        swordRedStonium = new ItemSwordSBCraft(3413, RedStoniumMaterial).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("swordRedStonium");
+        axeRedStonium = new ItemAxeSBCraft(3414, RedStoniumMaterial).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("axeRedStonium");
 
     }
 

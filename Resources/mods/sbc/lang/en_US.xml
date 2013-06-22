@@ -3,6 +3,10 @@
  <properties version="1.0">
 	<comment>English (en_US) Localization File</comment>
 	<entry key="item.pickaxeRedStonium.name">Redstonium Pickaxe</entry>
+	<entry key="tile.axeRedStonium.name">Redstonium Axe</entry>
+	<entry key="tile.shovelRedStonium.name">Redstonium Shovel</entry>
+	<entry key="tile.hoeRedStonium.name">Redstonium Hoe</entry>
+	<entry key="tile.swordRedStonium.name">Redstonium Sword</entry>
 	<entry key="item.eggSalad.name">Egg Salad</entry>
 	<entry key="item.potatoSalad.name">Potato Salad</entry>
 	<entry key="item.salmonSalad.name">Salmon Salad</entry>
@@ -10,4 +14,5 @@
 	<entry key="item.cheese.name">Cheese</entry>
 	<entry key="item.tomato.name">Tomato</entry>
 	<entry key="tile.tomatoCrop.name">Tomatoes</entry>
+
 </properties>
