@@ -1,5 +1,6 @@
 package spiderbiggen.sbc;
 
+import spiderbiggen.sbc.items.SBCItems;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,7 +13,7 @@ public class CreativeTabSBCraft extends CreativeTabs {
 
     @SideOnly(Side.CLIENT)
     public int getTabIconItemIndex(){
-        return SpiderbigCraft.eggSalad.itemID;
+        return SBCItems.eggSalad.itemID;
     }
 
     @Override

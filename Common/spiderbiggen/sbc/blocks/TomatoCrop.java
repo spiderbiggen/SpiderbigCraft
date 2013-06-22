@@ -1,8 +1,9 @@
-package spiderbiggen.sbc;
+package spiderbiggen.sbc.blocks;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import spiderbiggen.sbc.items.SBCItems;
 import spiderbiggen.sbc.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -19,7 +20,7 @@ public class TomatoCrop extends BlockCrops {
      * Generate a crop produce ItemStack for this crop.
      */
     protected int getCropItem(){
-        return SpiderbigCraft.tomato.itemID;
+        return SBCItems.tomato.itemID;
     }
 
     @SideOnly(Side.CLIENT)
@@ -42,7 +43,7 @@ public class TomatoCrop extends BlockCrops {
      * Generate a seed ItemStack for this crop.
      */
     protected int getSeedItem(){
-        return SpiderbigCraft.tomato.itemID;
+        return SBCItems.tomato.itemID;
     }
 
     @SideOnly(Side.CLIENT)

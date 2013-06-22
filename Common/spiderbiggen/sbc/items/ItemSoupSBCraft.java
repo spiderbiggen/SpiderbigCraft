@@ -1,4 +1,4 @@
-package spiderbiggen.sbc;
+package spiderbiggen.sbc.items;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -9,7 +9,6 @@ public class ItemSoupSBCraft extends ItemFoodSBCraft {
 
     public ItemSoupSBCraft(int id, int healAmount, boolean isWolfsFav){
         super(id, healAmount, isWolfsFav);
-        this.setCreativeTab(SpiderbigCraft.tabSBCraft);
     }
 
     public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer){

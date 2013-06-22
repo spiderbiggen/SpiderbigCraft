@@ -1,15 +1,20 @@
-package spiderbiggen.sbc;
+package spiderbiggen.sbc.items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import spiderbiggen.sbc.SpiderbigCraft;
 import spiderbiggen.sbc.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSBCraft extends Item {
+public class ItemFoodSBCraft extends ItemFood {
 
-    public ItemSBCraft(int par1){
-        super(par1);
+    public ItemFoodSBCraft(int id, int healAmount, boolean isWolfsFav){
+        super(id, healAmount, isWolfsFav);
+    }
+
+    public ItemFoodSBCraft(int id, int healAmount, float saturationmodifier, boolean isWolfsFav){
+        super(id, healAmount, saturationmodifier, isWolfsFav);
         this.setCreativeTab(SpiderbigCraft.tabSBCraft);
     }
 
