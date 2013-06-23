@@ -1,7 +1,10 @@
 package spiderbiggen.sbc;
 
+import java.io.File;
+
 import net.minecraft.creativetab.CreativeTabs;
 import spiderbiggen.sbc.blocks.SBCBlocks;
+import spiderbiggen.sbc.config.ConfigurationHandler;
 import spiderbiggen.sbc.core.LocalizationHandler;
 import spiderbiggen.sbc.items.SBCItems;
 import spiderbiggen.sbc.lib.Reference;
@@ -17,7 +20,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 //import cpw.mods.fml.common.SidedProxy;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(channels = {Reference.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false)
 public class SpiderbigCraft {
 
     /**
@@ -36,6 +39,7 @@ public class SpiderbigCraft {
     @PreInit
     public void preInit(FMLPreInitializationEvent event){
         LocalizationHandler.loadLanguages();
+        ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.CHANNEL_NAME + File.separator + Reference.MOD_ID + ".cfg"));
         SBCBlocks.InitBlocks();
         SBCItems.InitItems();
     }
