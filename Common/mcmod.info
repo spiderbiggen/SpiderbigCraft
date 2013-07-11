@@ -1,9 +1,9 @@
 [
 {
   "modid": "SBC",
-  "name": "SpiderbigCraft",
+  "name": "SpiderBigCraft",
   "description": "Additional foods and tool that will help you in your quest to defeat the ender dragon",
-  "version": "PRE 0.1.0",
+  "version": "0.1.5",
   "url": "github.com/spiderbiggen/SpiderbigCraft",
   "updateUrl": "",
   "authorList": ["Spiderbiggen"],

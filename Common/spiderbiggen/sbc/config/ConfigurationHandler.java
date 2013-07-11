@@ -11,29 +11,43 @@ import cpw.mods.fml.common.FMLLog;
 import net.minecraftforge.common.Configuration;
 
 public class ConfigurationHandler {
-    public static Configuration config;
-    
     public static void init(File file){
-        config = new Configuration(file);
-        
-        try{
+        Configuration config = new Configuration(file);
+
+        try {
             config.load();
-            ItemIDs.BOILEDEGGID = config.getItem("boiledEgg", ItemIDs.BOILEDEGGID_DEFAULT).getInt(ItemIDs.BOILEDEGGID_DEFAULT);
-            ItemIDs.CHEESEID = config.getItem("cheese", ItemIDs.CHEESEID_DEFAULT).getInt(ItemIDs.CHEESEID_DEFAULT);
-            ItemIDs.CHUNKGLOWSTONIUMID = config.getItem("chunkGlowStonium", ItemIDs.CHUNKGLOWSTONIUMID_DEFAULT).getInt(ItemIDs.CHUNKGLOWSTONIUMID_DEFAULT);
-            ItemIDs.CHUNKREDSTONIUMID  = config.getItem("chunkRedStonium", ItemIDs.CHUNKREDSTONIUMID_DEFAULT).getInt(ItemIDs.CHUNKREDSTONIUMID_DEFAULT);
-            ItemIDs.EGGSALADID  = config.getItem("eggSalad", ItemIDs.EGGSALADID_DEFAULT).getInt(ItemIDs.EGGSALADID_DEFAULT);
-            ItemIDs.INGOTGLOWSTONIUMID  = config.getItem("ingotGlowStonium", ItemIDs.INGOTGLOWSTONIUMID_DEFAULT).getInt(ItemIDs.INGOTGLOWSTONIUMID_DEFAULT);
-            ItemIDs.INGOTREDSTONIUMID  = config.getItem("ingotRedStonium", ItemIDs.INGOTREDSTONIUMID_DEFAULT).getInt(ItemIDs.INGOTREDSTONIUMID_DEFAULT);
-            ItemIDs.POTATOSALADID  = config.getItem("potatoSalad", ItemIDs.POTATOSALADID_DEFAULT).getInt(ItemIDs.POTATOSALADID_DEFAULT);
-            ItemIDs.SALMONSALADID  = config.getItem("salmonSalad", ItemIDs.SALMONSALADID_DEFAULT).getInt(ItemIDs.SALMONSALADID_DEFAULT);
-            ItemIDs.TOMATOID  = config.getItem("tomato", ItemIDs.TOMATOID_DEFAULT).getInt(ItemIDs.TOMATOID_DEFAULT);
-            ItemIDs.TOOLSGLOWSTONIUMID = config.getItem("glowstoniumtools", ItemIDs.TOOLSGLOWSTONIUMID_DEFAULT).getInt(ItemIDs.TOOLSGLOWSTONIUMID_DEFAULT);
-            ItemIDs.TOOLSREDSTONIUMID = config.getItem("redstoniumtools", ItemIDs.TOOLSREDSTONIUMID_DEFAULT).getInt(ItemIDs.TOOLSREDSTONIUMID_DEFAULT);
+            ItemIDs.BOILEDEGGID = config.getItem("foods/crops", "boiledEgg", ItemIDs.DEFAULT).getInt();
+            ItemIDs.CHEESEID = config.getItem("foods/crops", "cheese", ItemIDs.DEFAULT + 1).getInt();
+            ItemIDs.CHUNKGLOWSTONIUMID = config.getItem("foods/crops", "chunkGlowStonium", ItemIDs.DEFAULT + 2).getInt();
+            ItemIDs.CHUNKREDSTONIUMID = config.getItem("foods/crops", "chunkRedStonium", ItemIDs.DEFAULT + 3).getInt();
+            ItemIDs.EGGSALADID = config.getItem("foods/crops", "eggSalad", ItemIDs.DEFAULT + 4).getInt();
+            ItemIDs.INGOTGLOWSTONIUMID = config.getItem("foods/crops", "ingotGlowStonium", ItemIDs.DEFAULT + 5).getInt();
+            ItemIDs.INGOTREDSTONIUMID = config.getItem("foods/crops", "ingotRedStonium", ItemIDs.DEFAULT + 6).getInt();
+            ItemIDs.POTATOSALADID = config.getItem("foods/crops", "potatoSalad", ItemIDs.DEFAULT + 6).getInt();
+            ItemIDs.SALMONSALADID = config.getItem("foods/crops", "salmonSalad", ItemIDs.DEFAULT + 7).getInt();
+            ItemIDs.TOMATOID = config.getItem("foods/crops", "tomato", ItemIDs.DEFAULT + 8).getInt();
             
-        }catch(Exception e){
-            FMLLog.log(Level.SEVERE, e, Reference.MOD_ID + "has a problem loading the config file");
-        }finally{
+            ItemIDs.GLOWSTONIUMPICKID = config.getItem("tools", "glowstoniumpickaxe", ItemIDs.DEFAULT + 9).getInt();
+            ItemIDs.GLOWSTONIUMSHOVELID = config.getItem("tools", "glowstoniumshovel", ItemIDs.DEFAULT + 10).getInt();
+            ItemIDs.GLOWSTONIUMSWORDID = config.getItem("tools", "glowstoniumsword", ItemIDs.DEFAULT + 11).getInt();
+            ItemIDs.GLOWSTONIUMAXEID = config.getItem("tools", "glowstoniumaxe", ItemIDs.DEFAULT + 12).getInt();
+            ItemIDs.GLOWSTONIUMHOEID = config.getItem("tools", "glowstoniumhoe", ItemIDs.DEFAULT + 13).getInt();
+            
+            ItemIDs.REDSTONIUMPICKID = config.getItem("tools", "redstoniumpickaxe", ItemIDs.DEFAULT + 14).getInt();
+            ItemIDs.REDSTONIUMSHOVELID = config.getItem("tools", "redstoniumshovel", ItemIDs.DEFAULT + 15).getInt();
+            ItemIDs.REDSTONIUMSWORDID = config.getItem("tools", "redstoniumsword", ItemIDs.DEFAULT + 16).getInt();
+            ItemIDs.REDSTONIUMAXEID = config.getItem("tools", "redstoniumaxe", ItemIDs.DEFAULT + 17).getInt();
+            ItemIDs.REDSTONIUMHOEID = config.getItem("tools", "redstoniumhoe", ItemIDs.DEFAULT + 18).getInt();
+            
+            ItemIDs.IRONWAND = config.getItem("wands", "ironwand", ItemIDs.DEFAULT +19).getInt();
+            ItemIDs.DIAMONDWAND = config.getItem("wands", "diamondwand", ItemIDs.DEFAULT + 20).getInt();
+            ItemIDs.GOLDWAND = config.getItem("wands", "goldwand", ItemIDs.DEFAULT + 21).getInt();
+            ItemIDs.LAPISWAND = config.getItem("wands", "lapiswand", ItemIDs.DEFAULT + 22).getInt();
+            ItemIDs.REDSTONEWAND = config.getItem("wands", "redstonewand", ItemIDs.DEFAULT + 23).getInt();
+            ItemIDs.GLOWSTONEWAND = config.getItem("wands", "glowstonewand", ItemIDs.DEFAULT + 24).getInt();
+        } catch (Exception e) {
+            FMLLog.log(Level.SEVERE, e, Reference.MOD_ID.toLowerCase() + " has a problem loading the config file");
+        } finally {
             config.save();
         }
     }

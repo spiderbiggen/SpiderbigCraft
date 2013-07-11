@@ -12,7 +12,7 @@ public class ItemAxeSBCraft extends ItemAxe {
     public ItemAxeSBCraft(int par1, EnumToolMaterial par2EnumToolMaterial){
         super(par1, par2EnumToolMaterial);
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister){
