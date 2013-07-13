@@ -7,9 +7,9 @@
 
 	<!-- Delete files which were used in previous build -->
 	<target name="clean">
-		<delete file="${build.dir.development}\Mcp\src\minecraft\mcmod.info" />
-		<delete dir="${build.dir.development}\Mcp\src\minecraft\spiderbiggen" />
-		<delete dir="${build.dir.development}\Mcp\reobf\minecraft" />
+		<delete file="${build.dir.development}\forge\Mcp\src\minecraft\mcmod.info" />
+		<delete dir="${build.dir.development}\forge\Mcp\src\minecraft\spiderbiggen" />
+		<delete dir="${build.dir.development}\forge\Mcp\reobf\minecraft" />
 	</target>
 
 	<!-- Increment build number -->
@@ -21,26 +21,26 @@
 
 	<!-- Copy your project to MCP-->
 	<target name="prep">
-		<copy todir="${build.dir.development}\Mcp\src\minecraft">
+		<copy todir="${build.dir.development}\forge\Mcp\src\minecraft">
 			<fileset dir="${build.dir.development}\Source\SpiderbigCraft.git\Common" />
 		</copy>
 	</target>
 
 	<!-- Recompile and Reobfuscate your project inside /MCP -->
 	<target name="recompile">
-		<exec dir="${build.dir.development}\Mcp" executable="cmd" osfamily="windows">
+		<exec dir="${build.dir.development}\forge\Mcp" executable="cmd" osfamily="windows">
 			<arg line="/c recompile.bat" />
 		</exec>
-		<exec dir="${build.dir.development}\Mcp" executable="bash" osfamily="unix">
+		<exec dir="${build.dir.development}\forge\Mcp" executable="bash" osfamily="unix">
 			<arg line="recompile.sh" />
 		</exec>
 	</target>
 
 	<target name="reobfuscate">
-		<exec dir="${build.dir.development}\Mcp" executable="cmd" osfamily="windows">
+		<exec dir="${build.dir.development}\forge\Mcp" executable="cmd" osfamily="windows">
 			<arg line="/c reobfuscate_srg.bat" />
 		</exec>
-		<exec dir="${build.dir.development}\Mcp" executable="bash" osfamily="unix">
+		<exec dir="${build.dir.development}\forge\Mcp" executable="bash" osfamily="unix">
 			<arg line="reobfuscate_srg.sh" />
 		</exec>
 	</target>
@@ -58,8 +58,8 @@
 		<!-- Build the jar -->
 		<mkdir dir="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}" />
 		<jar destfile="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\SpiderbigCraft-${build.release.mod.version}-${build_number.build_number}.jar">
-			<fileset dir="${build.dir.development}\Mcp\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="${build.dir.development}\Mcp\reobf\minecraft" />
+			<fileset dir="${build.dir.development}\forge\Mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${build.dir.development}\forge\Mcp\reobf\minecraft" />
 			<fileset dir="${build.dir.development}\Source\SpiderbigCraft.git\Resources" excludes="**/xcf/**" />
 		</jar>
 

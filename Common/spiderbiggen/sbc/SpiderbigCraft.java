@@ -36,12 +36,15 @@ public class SpiderbigCraft {
     public void preInit(FMLPreInitializationEvent event){
         proxy.initSounds();
         proxy.initRenders();
-        LocalizationHandler.loadLanguages();
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         SBCBlocks.InitBlocks();
         SBCItems.InitItems();
+        SBCItems.addRecipes();
+        SBCItems.addNames();
+        SBCBlocks.addNames();
+        
     }
-    
+     
     @EventHandler
     public void Init(FMLInitializationEvent event){
         

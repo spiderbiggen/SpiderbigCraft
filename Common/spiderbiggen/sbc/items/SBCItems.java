@@ -9,6 +9,7 @@ import spiderbiggen.sbc.SpiderbigCraft;
 import spiderbiggen.sbc.blocks.SBCBlocks;
 import spiderbiggen.sbc.lib.ItemIDs;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class SBCItems {
 
@@ -82,8 +83,6 @@ public class SBCItems {
         redstoneWand = new ItemWandSBCraft(ItemIDs.REDSTONEWAND - 256, 1.25f, 15).setUnlocalizedName("redstoneWand");
         glowstoneWand = new ItemWandSBCraft(ItemIDs.GLOWSTONEWAND - 256, 1.75f, 20).setUnlocalizedName("glowstoneWand");
         
-        
-        addRecipes();
     }
 
     public static void addRecipes(){
@@ -107,6 +106,49 @@ public class SBCItems {
                 GameRegistry.addRecipe(new ItemStack(item), new Object[] { recipePatterns[j], '#', Item.stick, 'X', object });
             }
         }
+    }
+    
+    public static void addNames(){
+        //TODO
+        LanguageRegistry.addName(eggSalad, "Egg Salad");
+        LanguageRegistry.addName(potatoSalad, "Potato Salad");
+        LanguageRegistry.addName(salmonSalad, "Salmon Salad");
+        LanguageRegistry.addName(boiledEgg, "Boiled Egg");
+        LanguageRegistry.addName(cheese, "Cheese");
+        LanguageRegistry.addName(tomato, "Tomato");
+        LanguageRegistry.addName(chunkRedStonium, "Redstonium chunk");
+        LanguageRegistry.addName(chunkGlowStonium, "Glowstonium Chunk");
+        LanguageRegistry.addName(ingotRedStonium, "Redstonium Ingot");
+        LanguageRegistry.addName(ingotGlowStonium, "Glowstonium Ingot");
+        
+        //Redstonium Tools
+        LanguageRegistry.addName(pickaxeRedStonium, "Redstonium Pickaxe");
+        LanguageRegistry.addName(shovelRedStonium, "Redstonium Shovel");
+        LanguageRegistry.addName(swordRedStonium, "Redstonium Sword");
+        LanguageRegistry.addName(hoeRedStonium, "Redstonium Hoe");
+        LanguageRegistry.addName(axeRedStonium, "Redstonium Axe");
+        
+        //Glowstonium Tools
+        LanguageRegistry.addName(pickaxeGlowStonium, "Glowstonium Pickaxe");
+        LanguageRegistry.addName(shovelGlowStonium, "Glowstonium Shovel");
+        LanguageRegistry.addName(swordGlowStonium, "Glowstonium Sword");
+        LanguageRegistry.addName(hoeGlowStonium, "Glowstonium Hoe");
+        LanguageRegistry.addName(axeGlowStonium, "Glowstonium Axe");
+        
+        //Wands
+        LanguageRegistry.addName(ironWand, "Iron Wand");
+        LanguageRegistry.addName(diamondWand, "Diamond Wand");
+        LanguageRegistry.addName(goldWand, "Golden Wand");
+        LanguageRegistry.addName(lapisWand, "Lapis Wand");
+        LanguageRegistry.addName(redstoneWand, "Redstonium Wand");
+        LanguageRegistry.addName(glowstoneWand, "Glowstonium Wand");
+        
+        
+        
+        
+        
+        
+        
     }
     
 }
