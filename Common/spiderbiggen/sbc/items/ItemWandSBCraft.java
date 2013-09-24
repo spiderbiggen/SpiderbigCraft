@@ -20,19 +20,19 @@ public class ItemWandSBCraft extends Item {
         super(id);
         setCreativeTab(SpiderbigCraft.tabSBCraft);
         setMaxStackSize(1);
-        pwr = power;
-        chrg = chrgspd;
+        this.pwr = power;
+        this.chrg = chrgspd;
     }
 
     @Override
-    public boolean func_111207_a(ItemStack itemStack, EntityPlayer player, EntityLivingBase target){
+    public boolean itemInteractionForEntity(ItemStack itemStack, EntityPlayer player, EntityLivingBase target){
         if(!target.worldObj.isRemote){
             if(isCharged(itemStack.getItemDamage())){
                 target.setFire((int) (pwr * 5.0f));
                 target.motionY = pwr * 2;
                 itemStack.setItemDamage(itemStack.getItemDamage() + 1);
             }else{
-                target.setFire((int) (pwr * 3.0f));
+                target.setFire((int) (pwr * 2.5f));
                 target.motionY = pwr;
                 itemStack.setItemDamage(itemStack.getItemDamage() + 1);
             }

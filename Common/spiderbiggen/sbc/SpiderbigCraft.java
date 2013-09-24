@@ -1,8 +1,6 @@
 package spiderbiggen.sbc;
 
 
-import java.io.File;
-
 import net.minecraft.creativetab.CreativeTabs;
 import spiderbiggen.sbc.blocks.SBCBlocks;
 import spiderbiggen.sbc.config.ConfigurationHandler;
