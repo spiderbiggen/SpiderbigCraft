@@ -7,17 +7,17 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CreativeTabSBCraft extends CreativeTabs {
 
-    public CreativeTabSBCraft(String par2Str){
-        super(par2Str);
+    public CreativeTabSBCraft(String par2Str) {
+	super(par2Str);
     }
 
     @SideOnly(Side.CLIENT)
-    public int getTabIconItemIndex(){
-        return SBCItems.eggSalad.itemID;
+    public int getTabIconItemIndex() {
+	return SBCItems.eggSalad.itemID;
     }
 
     @Override
-    public String getTranslatedTabLabel(){
-        return "Spiderbig Craft";
+    public String getTranslatedTabLabel() {
+	return "Spiderbig Craft";
     }
 }

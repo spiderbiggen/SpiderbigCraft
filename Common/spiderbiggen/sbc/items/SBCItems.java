@@ -8,8 +8,8 @@ import net.minecraftforge.common.EnumHelper;
 import spiderbiggen.sbc.SpiderbigCraft;
 import spiderbiggen.sbc.blocks.SBCBlocks;
 import spiderbiggen.sbc.lib.ItemIDs;
+import spiderbiggen.sbc.lib.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class SBCItems {
 
@@ -38,7 +38,7 @@ public class SBCItems {
     public static Item swordGlowStonium;
     public static Item hoeGlowStonium;
     public static Item axeGlowStonium;
-    
+
     public static Item ironWand;
     public static Item diamondWand;
     public static Item goldWand;
@@ -46,109 +46,65 @@ public class SBCItems {
     public static Item redstoneWand;
     public static Item glowstoneWand;
 
-    public static void InitItems(){
-        boiledEgg = new ItemFoodSBCraft(ItemIDs.BOILEDEGGID - 256, 1, 0.7F, false).setUnlocalizedName("boiledEgg").setCreativeTab(SpiderbigCraft.tabSBCraft);
-        eggSalad = new ItemSoupSBCraft(ItemIDs.EGGSALADID - 256, 4, false).setUnlocalizedName("eggSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
-        potatoSalad = new ItemSoupSBCraft(ItemIDs.POTATOSALADID - 256, 5, false).setUnlocalizedName("potatoSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
-        salmonSalad = new ItemSoupSBCraft(ItemIDs.SALMONSALADID - 256, 4, false).setUnlocalizedName("salmonSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
-        cheese = new ItemFoodSBCraft(ItemIDs.CHEESEID - 256, 2, 1.1F, true).setUnlocalizedName("cheese").setCreativeTab(SpiderbigCraft.tabSBCraft);
-        tomato = new ItemSeedFoodSBCraft(ItemIDs.TOMATOID - 256, 3, 0.3F, SBCBlocks.tomatoCrop.blockID, Block.tilledField.blockID).setUnlocalizedName("tomato").setCreativeTab(SpiderbigCraft.tabSBCraft);
+    public static void InitItems() {
+	boiledEgg = new ItemFoodSBCraft(ItemIDs.BOILEDEGGID - 256, 1, 0.7F, false).setUnlocalizedName(Reference.RESOURCE_PREFIX + "boiledEgg").setCreativeTab(SpiderbigCraft.tabSBCraft);
+	eggSalad = new ItemSoupSBCraft(ItemIDs.EGGSALADID - 256, 4, false).setUnlocalizedName(Reference.RESOURCE_PREFIX + "eggSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
+	potatoSalad = new ItemSoupSBCraft(ItemIDs.POTATOSALADID - 256, 5, false).setUnlocalizedName(Reference.RESOURCE_PREFIX + "potatoSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
+	salmonSalad = new ItemSoupSBCraft(ItemIDs.SALMONSALADID - 256, 4, false).setUnlocalizedName(Reference.RESOURCE_PREFIX + "salmonSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
+	cheese = new ItemFoodSBCraft(ItemIDs.CHEESEID - 256, 2, 1.1F, true).setUnlocalizedName(Reference.RESOURCE_PREFIX + "cheese").setCreativeTab(SpiderbigCraft.tabSBCraft);
+	tomato = new ItemSeedFoodSBCraft(ItemIDs.TOMATOID - 256, 3, 0.3F, SBCBlocks.tomatoCrop.blockID, Block.tilledField.blockID).setUnlocalizedName(Reference.RESOURCE_PREFIX + "tomato").setCreativeTab(SpiderbigCraft.tabSBCraft);
 
-        chunkRedStonium = new ItemSBCraft(ItemIDs.CHUNKREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("chunkRedStonium");
-        ingotRedStonium = new ItemSBCraft(ItemIDs.INGOTREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("ingotRedStonium");
-        chunkGlowStonium = new ItemSBCraft(ItemIDs.CHUNKGLOWSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("chunkGlowStonium");
-        ingotGlowStonium = new ItemSBCraft(ItemIDs.INGOTGLOWSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("ingotGlowStonium");
-        
-        // Enums
-        REDSTONE = EnumHelper.addToolMaterial("Redstonium", 2, 775, 10F, 2, 15);
-        GLOWSTONE = EnumHelper.addToolMaterial("Glowstonium", 3, 2250, 15F, 2, 35);
+	chunkRedStonium = new ItemSBCraft(ItemIDs.CHUNKREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "chunkRedStonium");
+	ingotRedStonium = new ItemSBCraft(ItemIDs.INGOTREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "ingotRedStonium");
+	chunkGlowStonium = new ItemSBCraft(ItemIDs.CHUNKGLOWSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "chunkGlowStonium");
+	ingotGlowStonium = new ItemSBCraft(ItemIDs.INGOTGLOWSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "ingotGlowStonium");
 
-        // tools
-        swordRedStonium = new ItemSwordSBCraft(ItemIDs.REDSTONIUMSWORDID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("swordRedStonium");
-        pickaxeRedStonium = new ItemPickaxeSBCraft(ItemIDs.REDSTONIUMPICKID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("pickaxeRedStonium");
-        shovelRedStonium = new ItemShovelSBCraft(ItemIDs.REDSTONIUMSHOVELID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("shovelRedStonium");
-        axeRedStonium = new ItemAxeSBCraft(ItemIDs.REDSTONIUMAXEID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("axeRedStonium");
-        hoeRedStonium = new ItemHoeSBCraft(ItemIDs.REDSTONIUMHOEID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("hoeRedStonium");
-        
-        swordGlowStonium = new ItemSwordSBCraft(ItemIDs.GLOWSTONIUMSWORDID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("swordGlowStonium");
-        pickaxeGlowStonium = new ItemPickaxeSBCraft(ItemIDs.GLOWSTONIUMPICKID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("pickaxeGlowStonium");
-        shovelGlowStonium = new ItemShovelSBCraft(ItemIDs.GLOWSTONIUMSHOVELID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("shovelGlowStonium");
-        axeGlowStonium = new ItemAxeSBCraft(ItemIDs.GLOWSTONIUMAXEID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("axeGlowStonium");
-        hoeGlowStonium = new ItemHoeSBCraft(ItemIDs.GLOWSTONIUMHOEID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName("hoeGlowStonium");
+	// Enums
+	REDSTONE = EnumHelper.addToolMaterial("Redstonium", 2, 775, 10F, 2, 15);
+	GLOWSTONE = EnumHelper.addToolMaterial("Glowstonium", 3, 2250, 15F, 2, 35);
 
-        ironWand = new ItemWandSBCraft(ItemIDs.IRONWAND - 256, 0.75f, 20).setUnlocalizedName("ironWand");
-        diamondWand = new ItemWandSBCraft(ItemIDs.DIAMONDWAND - 256, 1.5f, 30).setUnlocalizedName("diamondWand");
-        goldWand = new ItemWandSBCraft(ItemIDs.GOLDWAND - 256, 0.85f, 5).setUnlocalizedName("goldWand");
-        lapisWand = new ItemWandSBCraft(ItemIDs.LAPISWAND - 256, 0.95f, 10).setUnlocalizedName("lapisWand");
-        redstoneWand = new ItemWandSBCraft(ItemIDs.REDSTONEWAND - 256, 1.25f, 15).setUnlocalizedName("redstoneWand");
-        glowstoneWand = new ItemWandSBCraft(ItemIDs.GLOWSTONEWAND - 256, 1.75f, 20).setUnlocalizedName("glowstoneWand");
-        
+	// tools
+	swordRedStonium = new ItemSwordSBCraft(ItemIDs.REDSTONIUMSWORDID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "swordRedStonium");
+	pickaxeRedStonium = new ItemPickaxeSBCraft(ItemIDs.REDSTONIUMPICKID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "pickaxeRedStonium");
+	shovelRedStonium = new ItemShovelSBCraft(ItemIDs.REDSTONIUMSHOVELID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "shovelRedStonium");
+	axeRedStonium = new ItemAxeSBCraft(ItemIDs.REDSTONIUMAXEID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "axeRedStonium");
+	hoeRedStonium = new ItemHoeSBCraft(ItemIDs.REDSTONIUMHOEID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "hoeRedStonium");
+
+	swordGlowStonium = new ItemSwordSBCraft(ItemIDs.GLOWSTONIUMSWORDID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "swordGlowStonium");
+	pickaxeGlowStonium = new ItemPickaxeSBCraft(ItemIDs.GLOWSTONIUMPICKID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "pickaxeGlowStonium");
+	shovelGlowStonium = new ItemShovelSBCraft(ItemIDs.GLOWSTONIUMSHOVELID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "shovelGlowStonium");
+	axeGlowStonium = new ItemAxeSBCraft(ItemIDs.GLOWSTONIUMAXEID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "axeGlowStonium");
+	hoeGlowStonium = new ItemHoeSBCraft(ItemIDs.GLOWSTONIUMHOEID - 256, GLOWSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "hoeGlowStonium");
+
+	ironWand = new ItemWandSBCraft(ItemIDs.IRONWAND - 256, 0.75f, 20).setUnlocalizedName(Reference.RESOURCE_PREFIX + "ironWand");
+	diamondWand = new ItemWandSBCraft(ItemIDs.DIAMONDWAND - 256, 1.5f, 30).setUnlocalizedName(Reference.RESOURCE_PREFIX + "diamondWand");
+	goldWand = new ItemWandSBCraft(ItemIDs.GOLDWAND - 256, 0.85f, 5).setUnlocalizedName(Reference.RESOURCE_PREFIX + "goldWand");
+	lapisWand = new ItemWandSBCraft(ItemIDs.LAPISWAND - 256, 0.95f, 10).setUnlocalizedName(Reference.RESOURCE_PREFIX + "lapisWand");
+	redstoneWand = new ItemWandSBCraft(ItemIDs.REDSTONEWAND - 256, 1.25f, 15).setUnlocalizedName(Reference.RESOURCE_PREFIX + "redstoneWand");
+	glowstoneWand = new ItemWandSBCraft(ItemIDs.GLOWSTONEWAND - 256, 1.75f, 20).setUnlocalizedName(Reference.RESOURCE_PREFIX + "glowstoneWand");
+
     }
 
-    public static void addRecipes(){
-        GameRegistry.addSmelting(chunkGlowStonium.itemID, new ItemStack(ingotGlowStonium), 1.0F);
-        GameRegistry.addRecipe(new ItemStack(chunkGlowStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Block.obsidian);
-        GameRegistry.addSmelting(chunkRedStonium.itemID, new ItemStack(ingotRedStonium), 1.0F);
-        GameRegistry.addRecipe(new ItemStack(chunkRedStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Item.clay);
-        GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[] { new ItemStack(Item.bucketMilk, 0, 3) });
-        GameRegistry.addShapelessRecipe(new ItemStack(salmonSalad, 1), new Object[] { new ItemStack(Item.fishRaw, 2), new ItemStack(Item.bowlEmpty, 1), new ItemStack(Item.bakedPotato, 1), new ItemStack(boiledEgg, 1) });
-        GameRegistry.addRecipe(new ItemStack(potatoSalad), " p ", "pgp", " b ", 'p', Item.bakedPotato, 'b', Item.bowlEmpty, 'g', Block.tallGrass);
-        GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", 'e', boiledEgg, 'p', Item.bakedPotato, 'b', Item.bowlEmpty);
-        GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
+    public static void addRecipes() {
+	GameRegistry.addSmelting(chunkGlowStonium.itemID, new ItemStack(ingotGlowStonium), 1.0F);
+	GameRegistry.addRecipe(new ItemStack(chunkGlowStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Block.obsidian);
+	GameRegistry.addSmelting(chunkRedStonium.itemID, new ItemStack(ingotRedStonium), 1.0F);
+	GameRegistry.addRecipe(new ItemStack(chunkRedStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Item.clay);
+	GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[] { new ItemStack(Item.bucketMilk, 0, 3) });
+	GameRegistry.addShapelessRecipe(new ItemStack(salmonSalad, 1), new Object[] { new ItemStack(Item.fishRaw, 2), new ItemStack(Item.bowlEmpty, 1), new ItemStack(Item.bakedPotato, 1), new ItemStack(boiledEgg, 1) });
+	GameRegistry.addRecipe(new ItemStack(potatoSalad), " p ", "pgp", " b ", 'p', Item.bakedPotato, 'b', Item.bowlEmpty, 'g', Block.tallGrass);
+	GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", 'e', boiledEgg, 'p', Item.bakedPotato, 'b', Item.bowlEmpty);
+	GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
 
-        String[][] recipePatterns = new String[][] { { "XXX", " # ", " # " }, { "X", "#", "#" }, { "XX", "X#", " #" }, { "XX", " #", " #" } };
-        Object[][] recipeSBCItems = new Object[][] { { SBCItems.ingotRedStonium, SBCItems.ingotGlowStonium }, { SBCItems.pickaxeRedStonium, SBCItems.pickaxeGlowStonium }, { SBCItems.shovelRedStonium, SBCItems.shovelGlowStonium }, { SBCItems.axeRedStonium, SBCItems.axeGlowStonium }, { SBCItems.hoeRedStonium, SBCItems.hoeGlowStonium } };
-        for (int i = 0; i < recipeSBCItems[0].length; ++i) {
-            Object object = recipeSBCItems[0][i];
+	String[][] recipePatterns = new String[][] { { "XXX", " # ", " # " }, { "X", "#", "#" }, { "XX", "X#", " #" }, { "XX", " #", " #" } };
+	Object[][] recipeSBCItems = new Object[][] { { SBCItems.ingotRedStonium, SBCItems.ingotGlowStonium }, { SBCItems.pickaxeRedStonium, SBCItems.pickaxeGlowStonium }, { SBCItems.shovelRedStonium, SBCItems.shovelGlowStonium }, { SBCItems.axeRedStonium, SBCItems.axeGlowStonium }, { SBCItems.hoeRedStonium, SBCItems.hoeGlowStonium } };
+	for (int i = 0; i < recipeSBCItems[0].length; ++i) {
+	    Object object = recipeSBCItems[0][i];
 
-            for (int j = 0; j < recipeSBCItems.length - 1; ++j) {
-                Item item = (Item) recipeSBCItems[j + 1][i];
-                GameRegistry.addRecipe(new ItemStack(item), new Object[] { recipePatterns[j], '#', Item.stick, 'X', object });
-            }
-        }
+	    for (int j = 0; j < recipeSBCItems.length - 1; ++j) {
+		Item item = (Item) recipeSBCItems[j + 1][i];
+		GameRegistry.addRecipe(new ItemStack(item), new Object[] { recipePatterns[j], '#', Item.stick, 'X', object });
+	    }
+	}
     }
-    
-    public static void addNames(){
-        //TODO
-        LanguageRegistry.addName(eggSalad, "Egg Salad");
-        LanguageRegistry.addName(potatoSalad, "Potato Salad");
-        LanguageRegistry.addName(salmonSalad, "Salmon Salad");
-        LanguageRegistry.addName(boiledEgg, "Boiled Egg");
-        LanguageRegistry.addName(cheese, "Cheese");
-        LanguageRegistry.addName(tomato, "Tomato");
-        LanguageRegistry.addName(chunkRedStonium, "Redstonium chunk");
-        LanguageRegistry.addName(chunkGlowStonium, "Glowstonium Chunk");
-        LanguageRegistry.addName(ingotRedStonium, "Redstonium Ingot");
-        LanguageRegistry.addName(ingotGlowStonium, "Glowstonium Ingot");
-        
-        //Redstonium Tools
-        LanguageRegistry.addName(pickaxeRedStonium, "Redstonium Pickaxe");
-        LanguageRegistry.addName(shovelRedStonium, "Redstonium Shovel");
-        LanguageRegistry.addName(swordRedStonium, "Redstonium Sword");
-        LanguageRegistry.addName(hoeRedStonium, "Redstonium Hoe");
-        LanguageRegistry.addName(axeRedStonium, "Redstonium Axe");
-        
-        //Glowstonium Tools
-        LanguageRegistry.addName(pickaxeGlowStonium, "Glowstonium Pickaxe");
-        LanguageRegistry.addName(shovelGlowStonium, "Glowstonium Shovel");
-        LanguageRegistry.addName(swordGlowStonium, "Glowstonium Sword");
-        LanguageRegistry.addName(hoeGlowStonium, "Glowstonium Hoe");
-        LanguageRegistry.addName(axeGlowStonium, "Glowstonium Axe");
-        
-        //Wands
-        LanguageRegistry.addName(ironWand, "Iron Wand");
-        LanguageRegistry.addName(diamondWand, "Diamond Wand");
-        LanguageRegistry.addName(goldWand, "Golden Wand");
-        LanguageRegistry.addName(lapisWand, "Lapis Wand");
-        LanguageRegistry.addName(redstoneWand, "Redstonium Wand");
-        LanguageRegistry.addName(glowstoneWand, "Glowstonium Wand");
-        
-        
-        
-        
-        
-        
-        
-    }
-    
 }

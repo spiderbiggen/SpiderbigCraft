@@ -18,13 +18,13 @@ public class ItemIDs {
     public static int GLOWSTONIUMSWORDID;
     public static int GLOWSTONIUMAXEID;
     public static int GLOWSTONIUMHOEID;
-    
+
     public static int REDSTONIUMPICKID;
     public static int REDSTONIUMSHOVELID;
     public static int REDSTONIUMSWORDID;
     public static int REDSTONIUMAXEID;
     public static int REDSTONIUMHOEID;
-    
+
     public static int IRONWAND;
     public static int DIAMONDWAND;
     public static int GOLDWAND;
