@@ -2,17 +2,21 @@ package spiderbiggen.sbc.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import spiderbiggen.sbc.SpiderbigCraft;
+import spiderbiggen.sbc.lib.IDs;
 import spiderbiggen.sbc.lib.Reference;
+import spiderbiggen.sbc.tileentity.TileEntityGrillBlock;
+import cpw.mods.fml.common.network.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -41,74 +45,60 @@ public class GrillBlock extends BlockContainer {
 	topIcon = register.registerIcon(isActive ? Reference.RESOURCE_PREFIX + "Grill_Top_Active" : Reference.RESOURCE_PREFIX + "Grill_Top");
 	botIcon = register.registerIcon(Reference.RESOURCE_PREFIX + "Grill_Bottom");
 	sideIcon = register.registerIcon(Reference.RESOURCE_PREFIX + "Grill_Side");
-	frontIcon = register.registerIcon(Reference.RESOURCE_PREFIX  + "Grill_Front");
+	frontIcon = register.registerIcon(Reference.RESOURCE_PREFIX + "Grill_Front");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
-	return side == 0 ? this.botIcon : side == 1 ? topIcon: side == meta ? this.frontIcon : this.sideIcon;
+	if (meta == 0 && side == 3)
+	    return frontIcon;
+	if (side == meta && side > 1)
+	    return frontIcon;
+	switch (side) {
+	    case 0:
+		return botIcon;
+	    case 1:
+		return topIcon;
+	    default:
+		return sideIcon;
+	}
     }
-    
 
-    public int idDropped(int par1, Random rand, int par3){
+    public int idDropped(int par1, Random rand, int par3) {
 	return SBCBlocks.grillIdle.blockID;
     }
 
-    public void onBlockAdded(World world, int x, int y, int z){
-	super.onBlockAdded(world, x, y, z);
-	this.setDefaultDirection(world, x, y, z);
-    }
-
-    private void setDefaultDirection(World world, int x, int y, int z) {
-	if(!world.isRemote){
-	    int l = world.getBlockId(x, y, z++);
-	    int il = world.getBlockId(x, y, z--);
-	    int jl = world.getBlockId(x++, y, z);
-	    int kl = world.getBlockId(x--, y, z);
-	    byte b0 = 2;
-
-            if(Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[il]){
-        	b0 = 2;
-            }
-	    if(Block.opaqueCubeLookup[il] && !Block.opaqueCubeLookup[l]){
-		b0 = 3;
-	    }
-            if(Block.opaqueCubeLookup[kl] && !Block.opaqueCubeLookup[jl]){
-        	b0 = 4;
-            }
-	    if(Block.opaqueCubeLookup[jl] && !Block.opaqueCubeLookup[kl]){
-		b0 = 5;
-	    }
-
-            world.setBlockMetadataWithNotify(x, y, y, b0, 2);
-	}
-    }
-
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack itemstack){
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack itemstack) {
 	int l = MathHelper.floor_double((player.rotationYaw / 90F) + 0.5D) & 3;
-	
-	switch(l){
-	    case 0: 
+
+	switch (l) {
+	    case 0:
 		world.setBlockMetadataWithNotify(x, y, z, 2, 2);
 		break;
-	    case 1: 
+	    case 1:
 		world.setBlockMetadataWithNotify(x, y, z, 5, 2);
 		break;
-	    case 2: 
+	    case 2:
 		world.setBlockMetadataWithNotify(x, y, z, 3, 2);
 		break;
-	    case 3: 
+	    case 3:
 		world.setBlockMetadataWithNotify(x, y, z, 4, 2);
 		break;
 	}
-	
-	if(itemstack.hasDisplayName()){
-	    ((TileEntityGrillBlock)world.getBlockTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());;
+
+	if (itemstack.hasDisplayName()) {
+	    ((TileEntityGrillBlock) world.getBlockTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());;
 	}
     }
-    
-    
+
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+	if (!world.isRemote) {
+	    FMLNetworkHandler.openGui(player, SpiderbigCraft.instance, IDs.GUIIDGRILL, world, x, y, z);
+	}
+	return true;
+    }
+
     public TileEntity createNewTileEntity(World world) {
 	return new TileEntityGrillBlock();
     }
