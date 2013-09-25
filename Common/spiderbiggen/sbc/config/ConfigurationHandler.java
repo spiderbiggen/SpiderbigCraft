@@ -21,8 +21,9 @@ public class ConfigurationHandler {
 	    // Blocks
 	    BlockIDs.TOMATOCROPID = config.getBlock("crops", "tomatoCrop", BlockIDs.DEFAULT).getInt();
 	    BlockIDs.GRILLBLOCKID = config.getBlock("machines", "grillBlock", BlockIDs.DEFAULT + 1).getInt();
-	    BlockIDs.TRAPBLOCKID = config.getBlock("machines", "trap", BlockIDs.DEFAULT + 2).getInt();
-
+	    BlockIDs.GRILLBLOCKACTIVEID = config.getBlock("machines", "grillBlockActive", BlockIDs.DEFAULT + 2).getInt();
+	    BlockIDs.TRAPBLOCKID = config.getBlock("machines", "trap", BlockIDs.DEFAULT + 3).getInt();
+	    
 	    // Items
 	    ItemIDs.BOILEDEGGID = config.getItem("foods/crops", "boiledEgg", ItemIDs.DEFAULT).getInt();
 	    ItemIDs.CHEESEID = config.getItem("foods/crops", "cheese", ItemIDs.DEFAULT + 1).getInt();
