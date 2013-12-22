@@ -20,40 +20,40 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class SpiderbigCraft {
-
+    
     @Instance(Reference.MOD_ID)
     public static SpiderbigCraft instance;
-
+    
     public static CreativeTabs tabSBCraft = new CreativeTabSBCraft("tabSBCraft");
-
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-	ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-	SBCBlocks.InitBlocks();
-	SBCItems.InitItems();
-	SBCItems.addRecipes();
-	GameRegistry();
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        SBCBlocks.InitBlocks();
+        SBCItems.InitItems();
+        SBCItems.addRecipes();
+        GameRegistry();
+        
     }
-
+    
     @EventHandler
     public void Init(FMLInitializationEvent event) {
-
+        
     }
-
+    
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
     }
-
+    
     private void GameRegistry() {
-	// blocks
-	GameRegistry.registerBlock(SBCBlocks.tomatoCrop, "TomatoCrop");
-	GameRegistry.registerBlock(SBCBlocks.grillIdle, "Grill");
-	GameRegistry.registerBlock(SBCBlocks.grillActive, "GrillActive");
-	GameRegistry.registerBlock(SBCBlocks.trap, "Trap");
-	// gui
-	GameRegistry.registerTileEntity(TileEntityGrillBlock.class, "grill");
-	// network
-	NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
+        // blocks
+        GameRegistry.registerBlock(SBCBlocks.tomatoCrop, "TomatoCrop");
+        GameRegistry.registerBlock(SBCBlocks.grillIdle, "Grill");
+        GameRegistry.registerBlock(SBCBlocks.grillActive, "GrillActive");
+        GameRegistry.registerBlock(SBCBlocks.trap, "Trap");
+        // gui
+        GameRegistry.registerTileEntity(TileEntityGrillBlock.class, "grill");
+        // network
+        NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
     }
 }
