@@ -5,7 +5,6 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
-import spiderbiggen.fp.items.ItemFoodSBCraft;
 import spiderbiggen.sbc.SpiderbigCraft;
 import spiderbiggen.sbc.blocks.SBCBlocks;
 import spiderbiggen.sbc.lib.IDs;
