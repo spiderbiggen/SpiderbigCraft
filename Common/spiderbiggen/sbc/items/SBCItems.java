@@ -5,6 +5,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import spiderbiggen.sbc.SpiderbigCraft;
 import spiderbiggen.sbc.blocks.SBCBlocks;
 import spiderbiggen.sbc.lib.IDs;
@@ -53,6 +54,7 @@ public class SBCItems {
         salmonSalad = new ItemSoupSBCraft(IDs.SALMONSALADID - 256, 4, false).setUnlocalizedName(Reference.RESOURCE_PREFIX + "salmonSalad").setCreativeTab(SpiderbigCraft.tabSBCraft);
         cheese = new ItemFoodSBCraft(IDs.CHEESEID - 256, 2, 1.1F, true).setUnlocalizedName(Reference.RESOURCE_PREFIX + "cheese").setCreativeTab(SpiderbigCraft.tabSBCraft);
         tomato = new ItemSeedFoodSBCraft(IDs.TOMATOID - 256, 3, 0.3F, SBCBlocks.tomatoCrop.blockID, Block.tilledField.blockID).setUnlocalizedName(Reference.RESOURCE_PREFIX + "tomato").setCreativeTab(SpiderbigCraft.tabSBCraft);
+        MinecraftForge.addGrassSeed(new ItemStack(tomato), 10);
         
         chunkRedStonium = new ItemSBCraft(IDs.CHUNKREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "chunkRedStonium");
         ingotRedStonium = new ItemSBCraft(IDs.INGOTREDSTONIUMID - 256).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "ingotRedStonium");
@@ -95,9 +97,19 @@ public class SBCItems {
         GameRegistry.addRecipe(new ItemStack(potatoSalad), " p ", "pgp", " b ", 'p', Item.bakedPotato, 'b', Item.bowlEmpty, 'g', Block.tallGrass);
         GameRegistry.addRecipe(new ItemStack(eggSalad), " e ", "epe", " b ", 'e', boiledEgg, 'p', Item.bakedPotato, 'b', Item.bowlEmpty);
         GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
+        ItemStack potionstack = new ItemStack(Item.potion,1,8204);
+        ItemStack potionstack2 = new ItemStack(Item.potion,1,8236);
+        ItemStack lapis = new ItemStack(Item.dyePowder,1, 4);
+        GameRegistry.addRecipe(new ItemStack(ironWand), "ipi", " s ", " s ", 'i', Item.ingotIron, 'p', potionstack , 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(diamondWand),  "ipi", " s ", " s ", 'i', Item.diamond, 'p', potionstack2 , 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(goldWand),  "ipi", " s ", " s ", 'i', Item.ingotGold, 'p', potionstack , 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(lapisWand),  "ipi", " s ", " s ", 'i', lapis,'p', potionstack , 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(redstoneWand), "ipi", " s ", " s ", 'i', ingotRedStonium, 'p', potionstack2 , 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(glowstoneWand), "ipi", " s ", " s ", 'i', ingotGlowStonium, 'p', potionstack2 , 's', Item.stick);
         
-        String[][] recipePatterns = new String[][] { { "XXX", " # ", " # " }, { "X", "#", "#" }, { "XX", "X#", " #" }, { "XX", " #", " #" } };
-        Object[][] recipeSBCItems = new Object[][] { { ingotRedStonium, ingotGlowStonium }, { pickaxeRedStonium, pickaxeGlowStonium }, { shovelRedStonium, shovelGlowStonium }, { axeRedStonium, axeGlowStonium }, { hoeRedStonium, hoeGlowStonium } };
+        
+        String[][] recipePatterns = new String[][] { { "XXX", " # ", " # " }, { "X", "#", "#" }, { "XX", "X#", " #" }, { "XX", " #", " #" } , { "#", "#", "X" }};
+        Object[][] recipeSBCItems = new Object[][] { { ingotRedStonium, ingotGlowStonium }, { pickaxeRedStonium, pickaxeGlowStonium }, { shovelRedStonium, shovelGlowStonium }, { axeRedStonium, axeGlowStonium }, { hoeRedStonium, hoeGlowStonium }, { swordRedStonium, swordGlowStonium } };
         for (int i = 0; i < recipeSBCItems[0].length; ++i) {
             Object object = recipeSBCItems[0][i];
             
