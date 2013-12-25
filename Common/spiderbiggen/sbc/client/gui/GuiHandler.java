@@ -1,11 +1,11 @@
 package spiderbiggen.sbc.client.gui;
 
-import spiderbiggen.sbc.container.ContainerGrillBlock;
-import spiderbiggen.sbc.lib.IDs;
-import spiderbiggen.sbc.tileentity.TileEntityGrillBlock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import spiderbiggen.sbc.container.ContainerGrillBlock;
+import spiderbiggen.sbc.lib.IDs;
+import spiderbiggen.sbc.tileentity.TileEntityGrillBlock;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {

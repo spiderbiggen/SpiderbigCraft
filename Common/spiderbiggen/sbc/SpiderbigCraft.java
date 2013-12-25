@@ -8,6 +8,7 @@ import spiderbiggen.sbc.items.SBCItems;
 import spiderbiggen.sbc.lib.Reference;
 import spiderbiggen.sbc.network.PacketHandler;
 import spiderbiggen.sbc.tileentity.TileEntityGrillBlock;
+import spiderbiggen.sbc.world.WorldGenHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
