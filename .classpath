@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="Common"/>
+	<classpathentry excluding="spiderbiggen/sbc/client/particles/EntitySpiderOreParticle.java" kind="src" path="Common"/>
 	<classpathentry kind="src" path="Resources"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Minecraft"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>

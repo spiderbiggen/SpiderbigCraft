@@ -61,7 +61,7 @@ public class SBCItems {
         
         // Enums
         REDSTONE = EnumHelper.addToolMaterial("Redstonium", 2, 775, 10F, 2, 15);
-        GLOWSTONE = EnumHelper.addToolMaterial("Glowstonium", 3, 2250, 15F, 2, 35);
+        GLOWSTONE = EnumHelper.addToolMaterial("Glowstonium", 4, 2250, 17.5F, 4, 35);
         
         // tools
         swordRedStonium = new ItemSwordSBCraft(IDs.REDSTONIUMSWORDID - 256, REDSTONE).setCreativeTab(SpiderbigCraft.tabSBCraft).setUnlocalizedName(Reference.RESOURCE_PREFIX + "swordRedStonium");
@@ -87,9 +87,9 @@ public class SBCItems {
     
     public static void addRecipes() {
         GameRegistry.addSmelting(chunkGlowStonium.itemID, new ItemStack(ingotGlowStonium), 1.0F);
-        GameRegistry.addRecipe(new ItemStack(chunkGlowStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Block.obsidian);
+        GameRegistry.addRecipe(new ItemStack(chunkGlowStonium), "ror", "oco", "ror", 'r', Item.glowstone, 'o', Block.obsidian, 'c', Item.clay);
         GameRegistry.addSmelting(chunkRedStonium.itemID, new ItemStack(ingotRedStonium), 1.0F);
-        GameRegistry.addRecipe(new ItemStack(chunkRedStonium), "rrr", "rcr", "rrr", 'r', Item.redstone, 'c', Item.clay);
+        GameRegistry.addRecipe(new ItemStack(chunkRedStonium), "rir", "ici", "rir", 'r', Item.redstone, 'c', Item.clay, 'i', Item.ingotIron);
         GameRegistry.addShapelessRecipe(new ItemStack(cheese, 2), new Object[] { new ItemStack(Item.bucketMilk, 0, 3) });
         GameRegistry.addShapelessRecipe(new ItemStack(salmonSalad, 1), new Object[] { new ItemStack(Item.fishRaw, 2), new ItemStack(Item.bowlEmpty, 1), new ItemStack(Item.bakedPotato, 1), new ItemStack(boiledEgg, 1) });
         GameRegistry.addRecipe(new ItemStack(potatoSalad), " p ", "pgp", " b ", 'p', Item.bakedPotato, 'b', Item.bowlEmpty, 'g', Block.tallGrass);
@@ -97,7 +97,7 @@ public class SBCItems {
         GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(boiledEgg), 0.5F);
         
         String[][] recipePatterns = new String[][] { { "XXX", " # ", " # " }, { "X", "#", "#" }, { "XX", "X#", " #" }, { "XX", " #", " #" } };
-        Object[][] recipeSBCItems = new Object[][] { { SBCItems.ingotRedStonium, SBCItems.ingotGlowStonium }, { SBCItems.pickaxeRedStonium, SBCItems.pickaxeGlowStonium }, { SBCItems.shovelRedStonium, SBCItems.shovelGlowStonium }, { SBCItems.axeRedStonium, SBCItems.axeGlowStonium }, { SBCItems.hoeRedStonium, SBCItems.hoeGlowStonium } };
+        Object[][] recipeSBCItems = new Object[][] { { ingotRedStonium, ingotGlowStonium }, { pickaxeRedStonium, pickaxeGlowStonium }, { shovelRedStonium, shovelGlowStonium }, { axeRedStonium, axeGlowStonium }, { hoeRedStonium, hoeGlowStonium } };
         for (int i = 0; i < recipeSBCItems[0].length; ++i) {
             Object object = recipeSBCItems[0][i];
             

@@ -20,6 +20,7 @@ public class ConfigurationHandler {
             IDs.GRILLBLOCKID = config.getBlock("machines", "grillBlock", IDs.BLOCKDEFAULT + 1).getInt();
             IDs.GRILLBLOCKACTIVEID = config.getBlock("machines", "grillBlockActive", IDs.BLOCKDEFAULT + 2).getInt();
             IDs.TRAPBLOCKID = config.getBlock("machines", "trap", IDs.BLOCKDEFAULT + 3).getInt();
+            IDs.SPIDEROREID = config.getBlock("ores", "spiderOre", IDs.BLOCKDEFAULT + 4).getInt();
             
             // Items
             IDs.BOILEDEGGID = config.getItem("foods/crops", "boiledEgg", IDs.ITEMDEFAULT).getInt();

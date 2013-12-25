@@ -1,4 +1,4 @@
-package spiderbiggen.sbc.gui;
+package spiderbiggen.sbc.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;

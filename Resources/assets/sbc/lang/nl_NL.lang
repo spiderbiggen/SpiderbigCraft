@@ -23,7 +23,9 @@ item.sbc:diamondWand.name=Diamanten Staf
 item.sbc:goldWand.name=Gouden Stad
 item.sbc:lapisWand.name=Lapis Staf
 item.sbc:redstoneWand.name=Redstonium Staf
-item.sbc:glowstoneWand.name=Glowstonium Staf
+item.sbc:glowstoneWand.name=Gloeistonium Staf
+
 tile.sbc:tomatoCrop.name=Tomaten
 tile.sbc:grillBlock.name=Gril
 tile.sbc:trapBlock.name=Valstrik
+tile.sbc:spiderOre.name=Spinnen Erts

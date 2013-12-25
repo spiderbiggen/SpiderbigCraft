@@ -24,6 +24,8 @@ item.sbc:goldWand.name=Golden Wand
 item.sbc:lapisWand.name=Lapis Wand
 item.sbc:redstoneWand.name=Redstonium Wand
 item.sbc:glowstoneWand.name=Glowstonium Wand
+
+tile.sbc:tomatoCrop.name=Tomatoes
 tile.sbc:grillBlock.name=Grill
 tile.sbc:trapBlock.name=Trap
-tile.sbc:tomatoCrop.name=Tomatoes
+tile.sbc:spiderOre.name=Spider Ore

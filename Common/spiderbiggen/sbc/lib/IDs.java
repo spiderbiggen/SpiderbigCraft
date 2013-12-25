@@ -39,6 +39,7 @@ public class IDs {
     public static int LAPISWAND;
     public static int REDSTONEWAND;
     public static int GLOWSTONEWAND;
+    public static int SPIDEROREID;
     
     // GUI IDs
     public static final int GUIIDGRILL = 0;
